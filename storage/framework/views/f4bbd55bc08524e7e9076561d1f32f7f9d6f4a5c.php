@@ -42,7 +42,12 @@
 
             <?php $__currentLoopData = $albuns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $album): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
-                <td><a href="/album/remove/<?php echo e($album->id); ?>" class="BtnRemove">-</a></td>
+                <td>
+                    <form action="/album/<?php echo e($album->id); ?>" method="POST">
+                        <?php echo csrf_field(); ?>
+                        <?php echo method_field('DELETE'); ?>
+                        <button type="submit" class="BtnRemove">-</button></td>
+                    </form>    
                 <td><?php echo e($album->dt_lanc); ?></td>
                 <td><?php echo e($album->name); ?></td>
             </tr>

@@ -57,12 +57,3 @@ body{
     width: 60%;
     text-align: center;
 }
-
-.contMsg{
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: aliceblue;
-    text-align: center;
-}

@@ -11,8 +11,17 @@ class ListarController extends Controller
 {
     public function index(){
     
-        $albuns = Albun::all();
+        $search = request('search');
+
+        if($search){
+            $albuns = Albun::where([
+                ['name', $search]
+            ])->get();
+        }else{
+            $albuns = Albun::all();
+        }
         $faixas = Faixa::all();
-        return view('listar', ['albuns' => $albuns, 'faixas' => $faixas]);
+
+        return view('listar', ['albuns' => $albuns, 'faixas' => $faixas, 'search' => $search]);
     }
 }

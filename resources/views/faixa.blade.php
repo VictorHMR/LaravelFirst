@@ -15,7 +15,8 @@
             <table class="FormAlbum">
                 <tr>
                     <td> <label for="albumPert" class="lblPesquisa">Album pertencente</label></td>
-                    <td><select name="albumPert" id="albumPert" class="lblPesquisa"> 
+                    <td><select name="albumPert" id="albumPert" class="lblPesquisa" required> 
+                        <option value="none" selected disabled>Selecione o album</option>
                         @foreach($albuns as $album)
                         <option value="{{$album->id}}">{{$album->name}}</option>
                         @endforeach
@@ -23,15 +24,15 @@
                 </tr>
                 <tr>
                     <td><label for="nomeFaixa" class="lblPesquisa">Digite o Nome da Faixa</label></td>
-                    <td><input type="text" name="nomeFaixa" class="faixa" autocomplete="off"></td>
+                    <td><input type="text" name="nomeFaixa" class="faixa" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td><label for="tmpFaixa" class="lblPesquisa">Digite a duração da Faixa</label></td>
-                    <td><input type="time" name="tmpFaixa" class="faixa" autocomplete="off"></td>
+                    <td><input type="time" name="tmpFaixa" class="faixa" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td><label for="numFaixa" class="lblPesquisa">Digite o Numero da Faixa</label></td>
-                    <td><input type="text" name="numFaixa" id="numFaixa" class="faixa" autocomplete="off"></td>
+                    <td><input type="text" name="numFaixa" id="numFaixa" class="faixa" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="buttonTD">
@@ -54,11 +55,20 @@
             </tr>
         @foreach($faixas as $faixa)
         <tr>
-                <td><a href="/faixa/remove/{{$faixa->id}}" class="BtnRemove">-</a></td>
+                <td>
+                <form action="/faixa/{{$faixa->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="BtnRemove">-</button></td>
+                    </form>      
                 <td>{{$faixa->num}}</td>
                 <td>{{$faixa->name}}</td>
                 <td>{{$faixa->duracao}}</td>
-                <td>{{$faixa->album_pert}}</td>
+                @foreach($albuns as $album)
+                    @if($album->id == $faixa->album_pert)
+                <td>{{$album->name}}</td>
+                    @endif
+                @endforeach
             </tr>
         @endforeach
         </table>

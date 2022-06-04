@@ -9,10 +9,11 @@
     </header>
     <a href="/">Voltar</a>
     <nav class="containerPesquisa">
-        <form>
+        <form action="/listar/search" method="GET">
+        <?php echo csrf_field(); ?>
             <label for="pesquisa" class="lblPesquisa">Digite uma palavra chave</label><br>
-            <input type="text" name="pesquisa" id="pesquisa">
-            <button id="btnPesquisar">Procurar</button>
+            <input type="text" name="search" id="pesquisa" autocomplete="off">
+            <input type="submit" id="btnPesquisar" value="Procurar">
         </form>
     </nav>
 

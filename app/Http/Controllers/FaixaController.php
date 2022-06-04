@@ -26,4 +26,10 @@ class FaixaController extends Controller
   
         return redirect('/faixa');
      }
+     
+   public function destroy($id){
+    Faixa::findOrFail($id)->delete();
+    return redirect('/faixa');
+
+ }
 }

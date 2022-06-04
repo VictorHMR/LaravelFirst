@@ -15,7 +15,8 @@
             <table class="FormAlbum">
                 <tr>
                     <td> <label for="albumPert" class="lblPesquisa">Album pertencente</label></td>
-                    <td><select name="albumPert" id="albumPert" class="lblPesquisa"> 
+                    <td><select name="albumPert" id="albumPert" class="lblPesquisa" required> 
+                        <option value="none" selected disabled>Selecione o album</option>
                         <?php $__currentLoopData = $albuns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $album): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <option value="<?php echo e($album->id); ?>"><?php echo e($album->name); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -23,15 +24,15 @@
                 </tr>
                 <tr>
                     <td><label for="nomeFaixa" class="lblPesquisa">Digite o Nome da Faixa</label></td>
-                    <td><input type="text" name="nomeFaixa" class="faixa"></td>
+                    <td><input type="text" name="nomeFaixa" class="faixa" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td><label for="tmpFaixa" class="lblPesquisa">Digite a duração da Faixa</label></td>
-                    <td><input type="time" name="tmpFaixa" class="faixa"></td>
+                    <td><input type="time" name="tmpFaixa" class="faixa" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td><label for="numFaixa" class="lblPesquisa">Digite o Numero da Faixa</label></td>
-                    <td><input type="text" name="numFaixa" id="numFaixa" class="faixa"></td>
+                    <td><input type="text" name="numFaixa" id="numFaixa" class="faixa" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="buttonTD">
@@ -54,11 +55,20 @@
             </tr>
         <?php $__currentLoopData = $faixas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faixa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
-                <td><a href="/faixa/remove/<?php echo e($faixa->id); ?>" class="BtnRemove">-</a></td>
+                <td>
+                <form action="/faixa/<?php echo e($faixa->id); ?>" method="POST">
+                        <?php echo csrf_field(); ?>
+                        <?php echo method_field('DELETE'); ?>
+                        <button type="submit" class="BtnRemove">-</button></td>
+                    </form>      
                 <td><?php echo e($faixa->num); ?></td>
                 <td><?php echo e($faixa->name); ?></td>
                 <td><?php echo e($faixa->duracao); ?></td>
-                <td><?php echo e($faixa->album_pert); ?></td>
+                <?php $__currentLoopData = $albuns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $album): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if($album->id == $faixa->album_pert): ?>
+                <td><?php echo e($album->name); ?></td>
+                    <?php endif; ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </table>

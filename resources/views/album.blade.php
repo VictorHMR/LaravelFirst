@@ -42,7 +42,12 @@
 
             @foreach($albuns as $album)
             <tr>
-                <td><a href="/album/remove/{{$album->id}}" class="BtnRemove">-</a></td>
+                <td>
+                    <form action="/album/{{$album->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="BtnRemove">-</button></td>
+                    </form>    
                 <td>{{$album->dt_lanc}}</td>
                 <td>{{$album->name}}</td>
             </tr>
