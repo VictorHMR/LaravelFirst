@@ -34,33 +34,33 @@
     text-align: center;
 }
 
-.AlbunsAdd th:nth-child(1){
-    text-align: left;
-    width: 10%;
-}
 .AlbunsAdd th:nth-child(2){
     text-align: left;
-    width: 80%;
+    width: 20%;
 }
 .AlbunsAdd th:nth-child(3){
+    text-align: left;
+    width: 70%;
+}
+.AlbunsAdd th:nth-child(1){
     text-align: left;
     width: 10%;
 }
 /*------------------------------------------------------------------*/
 
-.FaixasAdd th:nth-child(1){
+.FaixasAdd th:nth-child(2){
     text-align: left;
     width: 10%;
 }
-.FaixasAdd th:nth-child(2){
+.FaixasAdd th:nth-child(3){
     text-align: left;
     width: 60%;
 }
-.FaixasAdd th:nth-child(3){
+.FaixasAdd th:nth-child(4){
     text-align: left;
     width: 20%;
 }
-.FaixasAdd th:nth-child(4){
+.FaixasAdd th:nth-child(5){
     text-align: left;
     width: 10%;
 }

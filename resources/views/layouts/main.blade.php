@@ -10,6 +10,11 @@
     </head>
 
     <body>
+        @if(session('msg'))
+        <div class="contMsg">
+        <p class="msg">{{session('msg')}}</p>
+        </div>
+        @endif
     @yield('content')
     </body>
 

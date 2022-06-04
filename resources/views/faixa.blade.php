@@ -10,24 +10,32 @@
     </header>
     <a href="/">Voltar</a>
     <nav class="containerAdicao">
-        <form>
-
+        <form action="/faixa" method="POST">
+        @csrf
             <table class="FormAlbum">
                 <tr>
                     <td> <label for="albumPert" class="lblPesquisa">Album pertencente</label></td>
-                    <td><select name="albumPert" id="albumPert" class="lblPesquisa"> </select></td>
+                    <td><select name="albumPert" id="albumPert" class="lblPesquisa"> 
+                        @foreach($albuns as $album)
+                        <option value="{{$album->id}}">{{$album->name}}</option>
+                        @endforeach
+                    </select></td>
                 </tr>
                 <tr>
                     <td><label for="nomeFaixa" class="lblPesquisa">Digite o Nome da Faixa</label></td>
-                    <td><input type="text" name="nomeFaixa" class="faixa"></td>
+                    <td><input type="text" name="nomeFaixa" class="faixa" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td><label for="tmpFaixa" class="lblPesquisa">Digite a duração da Faixa</label></td>
-                    <td><input type="text" name="tmpFaixa" class="faixa"></td>
+                    <td><input type="time" name="tmpFaixa" class="faixa" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td><label for="numFaixa" class="lblPesquisa">Digite o Numero da Faixa</label></td>
+                    <td><input type="text" name="numFaixa" id="numFaixa" class="faixa" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="buttonTD">
-                        <button id="btnAdd">Adicionar</button>
+                        <input type="submit" class="btnAdd" value="Adicionar Faixa">
                     </td>
                 </tr>
             </table>
@@ -37,12 +45,22 @@
         <table class="FaixasAdd">
             <h1>Todas as Faixas</h1>
             <tr>
+                <th></th>
                 <th>Num</th>
                 <th>Nome</th>
                 <th>Duração</th>
                 <th>Album</th>
-            </tr>
 
+            </tr>
+        @foreach($faixas as $faixa)
+        <tr>
+                <td><a href="/faixa/remove/{{$faixa->id}}" class="BtnRemove">-</a></td>
+                <td>{{$faixa->num}}</td>
+                <td>{{$faixa->name}}</td>
+                <td>{{$faixa->duracao}}</td>
+                <td>{{$faixa->album_pert}}</td>
+            </tr>
+        @endforeach
         </table>
     </main>
 

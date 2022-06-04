@@ -23,6 +23,10 @@ Route::get('/listar', [ListarController::class, 'index']);
 Route::get('/listar/{name}', [ListarController::class, 'index']);
 
 
-Route::get('/album', [AlbumController::class, 'create']);
-Route::get('/faixa', [FaixaController::class, 'create']);
+Route::get('/album', [AlbumController::class, 'index']);
+Route::post('/album', [AlbumController::class, 'store']);
+
+
+Route::get('/faixa', [FaixaController::class, 'index']);
+Route::post('/faixa', [FaixaController::class, 'store']);
 

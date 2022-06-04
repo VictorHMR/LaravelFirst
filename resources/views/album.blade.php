@@ -10,20 +10,20 @@
     </header>
     <a href="/">Voltar</a>
     <nav class="containerAdicao">
-        <form>
-
+        <form action="/album" method="POST">
+            @csrf
             <table class="FormAlbum">
                 <tr>
-                    <td><label for="nomeFaixa" class="lblPesquisa">Digite o Nome do album</label></td>
-                    <td><input type="text" name="nomeFaixa" class="faixa"></td>
+                    <td><label for="nomeAlbum" class="lblPesquisa">Digite o Nome do album</label></td>
+                    <td><input type="text" name="nomeAlbum" id="nomeAlbum" class="faixa" autocomplete="off"></td>
                 </tr>
                 <tr>
-                    <td><label for="tmpFaixa" class="lblPesquisa">Digite o ano</label></td>
-                    <td><input type="text" name="tmpFaixa" class="faixa"></td>
+                    <td><label for="anoAlbum" class="lblPesquisa">Digite o ano</label></td>
+                    <td><input type="text" name="anoAlbum" id="anoAlbum" class="faixa" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="buttonTD">
-                        <button id="btnAdd">Adicionar</button>
+                        <input type="submit" class="btnAdd" value="Adicionar Album">
                     </td>
                 </tr>
             </table>
@@ -35,16 +35,16 @@
         <table class="AlbunsAdd">
             <h1>Todos os Albuns</h1>
             <tr>
+                <th></th>
                 <th>Ano</th>
                 <th>Nome</th>
-                <th>Operação</th>
             </tr>
 
             @foreach($albuns as $album)
             <tr>
+                <td><a href="/album/remove/{{$album->id}}" class="BtnRemove">-</a></td>
                 <td>{{$album->dt_lanc}}</td>
                 <td>{{$album->name}}</td>
-                <td></td>
             </tr>
             @endforeach
         </table>

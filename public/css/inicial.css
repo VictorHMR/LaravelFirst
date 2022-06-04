@@ -6,6 +6,7 @@ body{
     background-position: center 10%;
     padding: 1% 15%;
 }
+
 #containePrincipal{
     margin: 0 auto;
     width: 60vw;
@@ -53,6 +54,15 @@ body{
 }
 .containerMenu{
     margin: 10% auto;
-    width: 50%;
+    width: 60%;
+    text-align: center;
+}
+
+.contMsg{
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: aliceblue;
     text-align: center;
 }

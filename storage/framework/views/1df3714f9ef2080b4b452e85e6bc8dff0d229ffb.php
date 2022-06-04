@@ -7,9 +7,16 @@
         <link rel="stylesheet" href="/css/inicial.css">
         <link rel="stylesheet" href="/css/inputs.css">
         <link rel="stylesheet" href="/css/tables.css">
+
+        <script></script>
     </head>
 
     <body>
+        <?php if(session('msg')): ?>
+        <div class="contMsg">
+        <p class="msg"><?php echo e(session('msg')); ?></p>
+        </div>
+        <?php endif; ?>
     <?php echo $__env->yieldContent('content'); ?>
     </body>
 

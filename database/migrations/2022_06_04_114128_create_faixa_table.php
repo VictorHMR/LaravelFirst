@@ -17,7 +17,7 @@ class CreateFaixaTable extends Migration
             $table->id()->unsigned();
             $table->string('name', 100);
             $table->integer('num')->unsigned();
-            $table->double('duracao', 10,2)->unsigned();
+            $table->string('duracao');
             $table->integer('album_pert')->unsigned();
             $table->foreign('album_pert')->references('id')->on('album');
             $table->timestamps();

@@ -12,7 +12,7 @@
     <nav class="containerPesquisa">
         <form>
             <label for="pesquisa" class="lblPesquisa">Digite uma palavra chave</label><br>
-            <input type="text" name="pesquisa" id="pesquisa">
+            <input type="text" name="pesquisa" id="pesquisa" autocomplete="off">
             <button id="btnPesquisar">Procurar</button>
         </form>
     </nav>

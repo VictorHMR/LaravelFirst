@@ -8,7 +8,7 @@
     font-size: 80%;
     border: 0;
 }
-#btnAdd{
+.btnAdd{
     width: 50%;
     padding: 12px 10px;
     border-radius: 50px;
@@ -16,8 +16,13 @@
     color: white;
     font-weight: bold;
     font-size: 80%;
-    border: 0;
+    border: 2px solid rgb(37, 121, 190);
     margin: 0 auto;
+}
+
+.btnAdd:hover{
+background-color: aliceblue;
+color: rgb(37, 121, 190);
 }
 
 #pesquisa{
@@ -38,11 +43,33 @@
     text-decoration: none;
     background-color: rgb(0, 63, 117);
     padding: 15px;
+    border: 2px solid rgb(0, 63, 117);
     border-radius: 10px;
     color: white;
     line-height: 20px;
 }
 .buttonMenu:hover{
     color: black;
-    background-color: rgb(81, 168, 245);
+    background-color: rgb(255, 255, 255);
+}
+
+.BtnRemove{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin: 5px;
+    text-decoration: none;
+    background-color: rgb(70, 0, 0);
+    border: 1px rgb(70, 0, 0) solid;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+}
+
+.BtnRemove:hover{
+    background-color: aliceblue;
+    color: rgb(70, 0, 0);
+    border: 1px rgb(70, 0, 0) solid;
 }
