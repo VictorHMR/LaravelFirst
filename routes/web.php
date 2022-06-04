@@ -16,12 +16,13 @@ use App\Http\Controllers\AlbumController;
 |
 */
 
-Route::get('/', [ListarController::class, 'index']);
+Route::get('/', function(){
+    return view('menu');
+});
+Route::get('/listar', [ListarController::class, 'index']);
+Route::get('/listar/{name}', [ListarController::class, 'index']);
 
 
 Route::get('/album', [AlbumController::class, 'create']);
-
-
-
 Route::get('/faixa', [FaixaController::class, 'create']);
 

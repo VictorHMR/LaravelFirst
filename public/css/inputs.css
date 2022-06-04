@@ -1,0 +1,48 @@
+#btnPesquisar{
+    width: 10%;
+    padding: 12px 10px;
+    border-radius: 50px;
+    background: rgb(37, 121, 190);
+    color: white;
+    font-weight: bold;
+    font-size: 80%;
+    border: 0;
+}
+#btnAdd{
+    width: 50%;
+    padding: 12px 10px;
+    border-radius: 50px;
+    background: rgb(37, 121, 190);
+    color: white;
+    font-weight: bold;
+    font-size: 80%;
+    border: 0;
+    margin: 0 auto;
+}
+
+#pesquisa{
+    width: 70%;
+    padding: 10px;
+    border-radius: 50px;
+}
+.faixa{
+    width: 60%;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.buttonMenu{
+    display: inline-block;
+    width: fit-content;
+    margin: 5px;
+    text-decoration: none;
+    background-color: rgb(0, 63, 117);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    line-height: 20px;
+}
+.buttonMenu:hover{
+    color: black;
+    background-color: rgb(81, 168, 245);
+}

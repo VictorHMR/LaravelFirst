@@ -1,6 +1,6 @@
-
-<?php $__env->startSection('title', 'Menu'); ?>
-<?php $__env->startSection('content'); ?>
+@extends('layouts.main')
+@section('title', 'Menu')
+@section('content')
 <section id="containePrincipal">
     <header class="navBar">
         <div class="logo"><img src="/img/logo.png"></div>
@@ -22,5 +22,4 @@
 
 </section>
 
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\1.LARAVEL\ProjectAlbum\resources\views/menu.blade.php ENDPATH**/ ?>
+@endsection

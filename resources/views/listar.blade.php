@@ -8,9 +8,7 @@
             <h1>Discografia</h1>
         </div>
     </header>
-<a href="/album">Adicionar Albuns</a> &nbsp;&nbsp;&nbsp;
-<a href="/faixa">Adicionar Faixas</a>
-
+    <a href="/">Voltar</a>
     <nav class="containerPesquisa">
         <form>
             <label for="pesquisa" class="lblPesquisa">Digite uma palavra chave</label><br>
@@ -21,23 +19,28 @@
 
     <main class="containerAlbuns">
         <table class="AlbunsT">
+            @foreach($albuns as $album)
             <tr>
-                <th>Album:Irineu</th>
+                <th colspan="2">{{$album->name}}, {{$album->dt_lanc}}</th>
             </tr>
             <tr>
                 <td>N°</td>
                 <td>Faixa</td>
                 <td>Duração</td>
             </tr>
-
-            @for($i = 0; $i< count($numero);$i++)
+            @foreach($faixas as $faixa)
+            @if($faixa->album_pert == $album->id)
             <tr>
-                <td>{{$numero[$i]}}</td>
-                <td>{{$faixa[$i]}}</td>
-                <td>{{$duracao[$i]}}</td>
+                <td>{{$faixa->num}}</td>
+                <td>{{$faixa->name}}</td>
+                <td>{{$faixa->duracao}}</td>
 
             </tr>
-            @endfor
+            @endif
+
+            @endforeach
+            @endforeach
+
         </table>
     </main>
 

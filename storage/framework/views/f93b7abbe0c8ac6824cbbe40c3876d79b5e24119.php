@@ -7,9 +7,7 @@
             <h1>Discografia</h1>
         </div>
     </header>
-<a href="/album">Adicionar Albuns</a> &nbsp;&nbsp;&nbsp;
-<a href="/faixa">Adicionar Faixas</a>
-
+    <a href="/">Voltar</a>
     <nav class="containerPesquisa">
         <form>
             <label for="pesquisa" class="lblPesquisa">Digite uma palavra chave</label><br>
@@ -20,23 +18,28 @@
 
     <main class="containerAlbuns">
         <table class="AlbunsT">
+            <?php $__currentLoopData = $albuns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $album): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
-                <th>Album:Irineu</th>
+                <th colspan="2"><?php echo e($album->name); ?>, <?php echo e($album->dt_lanc); ?></th>
             </tr>
             <tr>
                 <td>N°</td>
                 <td>Faixa</td>
                 <td>Duração</td>
             </tr>
-
-            <?php for($i = 0; $i< count($numero);$i++): ?>
+            <?php $__currentLoopData = $faixas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faixa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($faixa->album_pert == $album->id): ?>
             <tr>
-                <td><?php echo e($numero[$i]); ?></td>
-                <td><?php echo e($faixa[$i]); ?></td>
-                <td><?php echo e($duracao[$i]); ?></td>
+                <td><?php echo e($faixa->num); ?></td>
+                <td><?php echo e($faixa->name); ?></td>
+                <td><?php echo e($faixa->duracao); ?></td>
 
             </tr>
-            <?php endfor; ?>
+            <?php endif; ?>
+
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
         </table>
     </main>
 

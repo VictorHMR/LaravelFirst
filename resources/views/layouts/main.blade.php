@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         <link rel="stylesheet" href="/css/inicial.css">
+        <link rel="stylesheet" href="/css/inputs.css">
+        <link rel="stylesheet" href="/css/tables.css">
     </head>
 
     <body>

@@ -2,13 +2,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
-    background: url(/img/background.png) center center no-repeat;
-    padding: 1% 10%;
+    background: url(/img/background.png) no-repeat;
+    background-position: center 10%;
+    padding: 1% 15%;
 }
 #containePrincipal{
     margin: 0 auto;
     width: 60vw;
-    height: 80vh;
     background: rgba(255, 255, 255, 0.699);
 }
 .navBar{
@@ -46,63 +46,13 @@ body{
 
 .containerAdicao form{
     margin: 0 auto;
-    width: 40%;
-    text-align: center;
-}
-#pesquisa{
-    width: 70%;
-    padding: 10px;
-    border-radius: 50px;
-}
-.faixa{
-    width: 100%;
-    padding: 10px;
-    border-radius: 50px;
-}
-.lblPesquisa{
-    line-height: 50px;
-}
-#btnPesquisar{
-    width: 10%;
-    padding: 12px 10px;
-    border-radius: 50px;
-    background: rgb(37, 121, 190);
-    color: white;
-    font-weight: bold;
-    font-size: 80%;
-    border: 0;
-}
-#btnAdd{
-    width: 50%;
-    padding: 12px 10px;
-    border-radius: 50px;
-    background: rgb(37, 121, 190);
-    color: white;
-    font-weight: bold;
-    font-size: 80%;
-    border: 0;
-    margin: 0 auto;
+    width: 60%;
 }
 .containerAlbuns{
     padding: 0 8%;
 }
-
-
-
-.AlbunsT{
-border-collapse: collapse;
-font-size: 20px;
-}
-
-.AlbunsT td:nth-child(1){
-    width: 10%;
-}
-.AlbunsT td:nth-child(2){
-    width: 90%;
-}
-.AlbunsT td:nth-child(3){
-    text-align: right;
-}
-.AlbunsT th{
-    padding-bottom: 20px;
+.containerMenu{
+    margin: 10% auto;
+    width: 50%;
+    text-align: center;
 }

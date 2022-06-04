@@ -13,12 +13,12 @@ class CreateFaixaTable extends Migration
      */
     public function up()
     {
-        Schema::create('faixa', function (Blueprint $table) {
+        Schema::create('faixas', function (Blueprint $table) {
             $table->id()->unsigned();
             $table->string('name', 100);
             $table->integer('num')->unsigned();
             $table->double('duracao', 10,2)->unsigned();
-            $table->interger('album_pert')->unsigned();
+            $table->integer('album_pert')->unsigned();
             $table->foreign('album_pert')->references('id')->on('album');
             $table->timestamps();
         });

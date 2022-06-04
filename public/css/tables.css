@@ -1,0 +1,66 @@
+.AlbunsT {
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+.AlbunsT td {
+    font-size: 18px;
+    padding: 5px 0;
+}
+
+.AlbunsT td:nth-child(1) {
+    width: 10%;
+}
+
+.AlbunsT td:nth-child(2) {
+    width: 90%;
+}
+
+.AlbunsT td:nth-child(3) {
+    text-align: right;
+}
+
+.AlbunsT th {
+    padding: 20px 0;
+    text-align: left;
+}
+
+/*------------------------------------------------------------------*/
+.FormAlbum {
+    margin: 0 auto;
+}
+
+.buttonTD {
+    text-align: center;
+}
+
+.AlbunsAdd th:nth-child(1){
+    text-align: left;
+    width: 10%;
+}
+.AlbunsAdd th:nth-child(2){
+    text-align: left;
+    width: 80%;
+}
+.AlbunsAdd th:nth-child(3){
+    text-align: left;
+    width: 10%;
+}
+/*------------------------------------------------------------------*/
+
+.FaixasAdd th:nth-child(1){
+    text-align: left;
+    width: 10%;
+}
+.FaixasAdd th:nth-child(2){
+    text-align: left;
+    width: 60%;
+}
+.FaixasAdd th:nth-child(3){
+    text-align: left;
+    width: 20%;
+}
+.FaixasAdd th:nth-child(4){
+    text-align: left;
+    width: 10%;
+}
